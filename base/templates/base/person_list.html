@@ -1,0 +1,36 @@
+{% extends 'base/main.html' %}
+
+
+{% block content %}
+<div class="header-bar">
+    <div>
+        <h1>The address book</h1>
+    </div>
+
+</div>
+
+<a href="{% url 'person-create' %}">Add a person to the address book</a>
+<th></th> 
+
+<form method="GET" action="" id="searchform">
+    <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+</form>
+<h1></h1>
+<table>
+    <tr>
+        <th>Person</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    {% for person in persons %} 
+    <tr>
+        <td>{{ person.name_and_lastname }}</td> 
+        <td><a href="{% url 'person-update' person.id %}">Edit/View</a></td>
+        <td><a href="{% url 'person-delete' person.id %}">Delete</a></td>
+    </tr>
+    {% empty %}
+    <h3>No persons in list</h3>
+    {% endfor %} 
+</table>
+{% endblock content %}
