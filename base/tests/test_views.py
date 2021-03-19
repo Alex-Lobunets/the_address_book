@@ -9,7 +9,7 @@ class TestViews(TestCase):
     def setUpTestData(cls):
         number_of_persons = 10
         for person_num in range(number_of_persons):
-            Person.objects.create(name_and_lastname='Jango Fett %s' % person_num)
+            Person.objects.create(name='Jango %s' % person_num)
     
     def test_view_url_exists_at_desired_location(self):
         resp = self.client.get('')

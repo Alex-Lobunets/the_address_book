@@ -32,10 +32,15 @@
     </tr>
     {% for person in persons %} 
     <tr></tr>
-        <td>{{ person.name_and_lastname }}</td> 
+    <ul><td>{{ person.name }}</td> 
+        <td>{{ person.lastname }}</td> 
         <td><a href="{% url 'person-update' person.id %}">Edit/View</a></td>
         <td><a href="{% url 'person-delete' person.id %}">Delete</a></td>
+    </ul>
+        
+
     </tr>
+    
     {% empty %}
     <h3>No persons in list</h3>
     {% endfor %} 
