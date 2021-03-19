@@ -12,8 +12,7 @@ class PersonList(ListView):
     
     model = Person
     context_object_name = 'persons'
-   
-    
+
     def get(self,request):
         persons = Person.objects.all()
     
@@ -26,7 +25,6 @@ class PersonList(ListView):
             persons = Person.objects.all()
         return render(request, 'base/person_list.html', {'persons': persons, 'query': query})
     
-
 
 class PersonCreate(CreateView):
     model = Person

@@ -2,8 +2,6 @@ from django.urls import path
 from .views import PersonList, PersonCreate, PersonUpdate, PersonDelete
 
 
-
-
 urlpatterns = [
     path('', PersonList.as_view(), name='persons'),
     path('person-create/', PersonCreate.as_view(), name='person-create'),
