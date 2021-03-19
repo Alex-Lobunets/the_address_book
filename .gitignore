@@ -1,8 +1,8 @@
 *.pyc
 .coverage
 db.sqlite3
-media/
+media
 
-venv/
+venv
 __pycache__
 
