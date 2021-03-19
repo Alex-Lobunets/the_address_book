@@ -10,12 +10,19 @@
 </div>
 
 <a href="{% url 'person-create' %}">Add a person to the address book</a>
+<h1></h1>
 <th></th> 
 
-<form method="GET" action="" id="searchform">
-    <input class="searchfield" id="searchbox" name="q" type="text" value="{{ request.GET.q }}" placeholder="Search..."/>
+<div id="search-add-wrapper">
+    <form method="GET" >
+        <input type='text' name='q' value="{{query}}">
+        <input class="button" type="submit" value='Search'>
+    </form>
+   
+</div>
 </form>
 <h1></h1>
+
 <table>
     <tr>
         <th>Person</th>
@@ -24,7 +31,7 @@
         <th></th>
     </tr>
     {% for person in persons %} 
-    <tr>
+    <tr></tr>
         <td>{{ person.name_and_lastname }}</td> 
         <td><a href="{% url 'person-update' person.id %}">Edit/View</a></td>
         <td><a href="{% url 'person-delete' person.id %}">Delete</a></td>

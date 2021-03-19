@@ -7,7 +7,7 @@ class Person(models.Model):
     street = models.CharField('Street', max_length=70, blank=True, default='')
     url = models.URLField('Url', blank=True, default='')
     phone_number = models.CharField('Phone number', max_length=20)
-    picture = models.URLField('Picture', blank=True, default='')
+    picture = models.ImageField(null=True, blank=True, upload_to="images/")
     
     
     def __str__(self):
