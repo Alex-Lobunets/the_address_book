@@ -1,18 +1,14 @@
 {% extends 'base/main.html' %}
 
-
 {% block content %}
 <div class="header-bar">
-    <div>
+    
         <h1>The address book</h1>
-    </div>
 
 </div>
 
 <a href="{% url 'person-create' %}">Add a person to the address book</a>
 <h1></h1>
-<th></th> 
-
 <div id="search-add-wrapper">
     <form method="GET" >
         <input type='text' name='q' value="{{query}}">
@@ -20,7 +16,7 @@
     </form>
    
 </div>
-</form>
+
 <h1></h1>
 
 <table>
